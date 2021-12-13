@@ -1,1 +1,1 @@
-Compiler Phase2 (Parser) kir khar
+Compiler Phase2 (Parser)
