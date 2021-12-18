@@ -7,16 +7,16 @@ import java.util.stream.Collectors;
 enum Action {
     ERROR, SHIFT, GOTO, PUSH_GOTO, REDUCE, ACCEPT
 }
-
 class LLCell {
-    private Action action;
-    private int target;
-    private List<String> functions;
+    private final Action action;
+    private final int target;
+    private final List<String> functions;
 
     public LLCell(Action action, int target, List<String> functions) {
         this.action = action;
         this.target = target;
         this.functions = functions;
+
     }
 
     public Action getAction() {
@@ -36,16 +36,16 @@ class LLCell {
 public class Parser {
     public static String TABLE_DELIMITER = ",";
 
-    private Lexical lexical;
-    private CodeGenerator codeGenerator;
+    private final Lexical lexical;
+    private final CodeGenerator codeGenerator;
     private boolean debugMode;
 
-    private String[] symbols;
-    private LLCell[][] parseTable;
-    private int startNode;
-    private Deque<Integer> parseStack = new ArrayDeque<>();
+    private final String[] symbols;
+    private final LLCell[][] parseTable;
+    private final int startNode;
+    private final Deque<Integer> parseStack = new ArrayDeque<>();
 
-    private List<String> recoveryState;
+    private final List<String> recoveryState;
 
     public Parser(Lexical lexical, CodeGenerator codeGenerator, String nptPath, boolean debugMode) {
         this(lexical, codeGenerator, nptPath);
