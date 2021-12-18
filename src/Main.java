@@ -35,7 +35,6 @@ public class Main {
         // and if the syntax is wrong, you should write "Syntax is wrong!" in outputFilePath.
 
         File file = new File(inputCoolFilePath);
-
         scanner.LexicalAnalyser scanner = new scanner.LexicalAnalyser(new FileReader(file));
 //        CodeGeneratorImpl codeGenerator = new CodeGeneratorImpl();
 //        Parser parser = new Parser(scanner, codeGenerator, tablePath);
